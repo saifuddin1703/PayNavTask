@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.example.paynavtask.ui.MyImageView
+        android:id="@+id/friendicon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/imagebackground"
+        android:clipToOutline="true"
+        android:src="@drawable/p2"
+        android:outlineProvider="background"
+        app:layout_constraintBottom_toTopOf="@id/friendname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/friendname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Harshada"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/friendicon" />
+</androidx.constraintlayout.widget.ConstraintLayout>

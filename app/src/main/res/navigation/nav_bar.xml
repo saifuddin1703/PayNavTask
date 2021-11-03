@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bar"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.paynavtask.ui.DashboardFragment"
+        android:label="DashboardFragment" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/fragment_enter_animation"
+            app:exitAnim="@anim/pop_exit_animation"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/pop_enter_animation"
+            app:popExitAnim="@anim/fragment_exit_animation" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_friendProfileFragment"
+            app:destination="@id/friendProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.paynavtask.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.paynavtask.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/pop_enter_animation"
+            app:exitAnim="@anim/fragment_exit_animation"
+            app:popExitAnim="@anim/fragment_exit_animation"
+            app:popUpTo="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendProfileFragment"
+        android:name="com.example.paynavtask.ui.FriendProfileFragment"
+        android:label="fragment_friend_profile"
+        tools:layout="@layout/fragment_friend_profile" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.example.paynavtask.ui.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" />
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.example.paynavtask.ui.MessageFragment"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_message" />
+</navigation>

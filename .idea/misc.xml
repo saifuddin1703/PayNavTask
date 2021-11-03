@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/drawable/back.xml" value="0.15493421052631579" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/drawable/bottomsheetbackground.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/drawable/bottomsheetbackgroundcollapsed.xml" value="0.15493421052631579" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/drawable/circle.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/drawable/expendituredetailbackground.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.2453125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/drawable/ic_baseline_keyboard_arrow_up_24.xml" value="0.15493421052631579" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/drawable/imagebackground.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/dashboardtoolbar.xml" value="0.14473684210526316" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/fragment_dashboard.xml" value="0.13942307692307693" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/fragment_friend_profile.xml" value="0.10382513661202186" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/fragment_home.xml" value="0.14473684210526316" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/fragment_message.xml" value="0.14473684210526316" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/fragment_profile.xml" value="0.136" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/fragment_transaction.xml" value="0.14473684210526316" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/fragment_view_pager.xml" value="0.176" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/friendlayout.xml" value="0.536" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/nestedfriendlayout.xml" value="0.264" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/profiletoolbar.xml" value="0.14473684210526316" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/PayNavTasl/app/src/main/res/layout/sample_my_view.xml" value="0.13360507246376813" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

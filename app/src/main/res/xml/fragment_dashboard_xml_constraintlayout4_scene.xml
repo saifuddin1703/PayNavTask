@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <OnClick motion:targetId="@id/expand" motion:clickAction="transitionToEnd"/>
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/expandedfriendlist"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+
+            />
+
+        <Constraint
+            android:id="@+id/friendicon1"
+            android:visibility="gone"/>
+
+        <Constraint
+            android:id="@+id/friendicon2"
+            android:visibility="gone"/>
+
+        <Constraint
+            android:id="@+id/friendicon3"
+            android:visibility="gone"/>
+
+        <Constraint
+            android:id="@+id/friendicon4"
+            android:visibility="gone"/>
+        <Constraint
+            android:id="@+id/expand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/viewpager"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toTopOf="@id/expandedfriendlist"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"/>
+    </ConstraintSet>
+</MotionScene>

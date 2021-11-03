@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/motionlayout"
+    android:background="@color/app_color"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".ui.DashboardFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/dashboardtoolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Jay Sethi"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="reachjaysethi-1@oksbi"
+            android:textColor="@color/gray_600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username" />
+
+        <com.example.paynavtask.ui.MyImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/imagebackground"
+            android:clipToOutline="true"
+            android:outlineProvider="background"
+            android:src="@drawable/profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/mostrecent"
+        android:visibility="gone"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/userdetails"
+        app:layout_constraintBottom_toTopOf="@id/mostrecentlist"
+        android:text="@string/most_recents_friends"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mostrecentlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/friendlist"
+        app:layout_constraintEnd_toStartOf="@id/more"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userdetails"
+        tools:itemCount="4"
+        tools:listitem="@layout/friendlayout" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/recent"
+        android:visibility="gone"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mostrecentlist"
+        app:layout_constraintBottom_toTopOf="@id/friendlist"
+        android:text="Recents"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/close"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/recent"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/white"
+        android:src="@drawable/downwhite"
+        app:layout_constraintTop_toBottomOf="@id/mostrecentlist"
+        app:layout_constraintBottom_toTopOf="@id/friendlist"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/friendlist"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mostrecentlist"
+        tools:itemCount="4"
+        tools:listitem="@layout/friendlayout" />
+
+    <LinearLayout
+        android:id="@+id/more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mostrecentlist"
+        app:layout_constraintTop_toBottomOf="@id/userdetails">
+
+        <ImageView
+            android:id="@+id/friendicon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/imagebackground"
+            android:clipToOutline="true"
+            android:outlineProvider="background"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:layout_constraintBottom_toTopOf="@id/friendname"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/friendname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Recents"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/friendicon" />
+    </LinearLayout>
+
+    <ScrollView
+        android:paddingTop="20dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bottomsheetbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mostrecentlist">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+
+            <TextView
+                android:id="@+id/tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="YOUR ACCOUNT"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/expenditures"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tagline">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.2L"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="total \nexchanges"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="129"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="upcoming \npaybacks"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4632"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="upcoming \ndues"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintlayout4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/expendituredetailbackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/expenditures">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab"
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tabIndicatorAnimationDuration="1000"
+                    app:tabIndicatorColor="@color/black"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabSelectedTextColor="@color/black"
+                    app:tabTextAppearance="@style/Mytablayouttheme"
+                    app:tabTextColor="@color/gray_600">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="return"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="receive" />
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/friendstag"
+                    app:layout_constraintTop_toBottomOf="@id/tab" />
+
+                <TextView
+                    android:id="@+id/friendstag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:text="FRIENDS"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewpager" />
+
+                <com.example.paynavtask.ui.MyImageView
+                    android:id="@+id/friendicon1"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/imagebackground"
+                    android:clipToOutline="true"
+                    android:outlineProvider="background"
+                    android:src="@drawable/p2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/friendstag"
+                    app:layout_constraintVertical_bias="1" />
+
+                <com.example.paynavtask.ui.MyImageView
+                    android:id="@+id/friendicon2"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/imagebackground"
+                    android:clipToOutline="true"
+                    android:src="@drawable/p3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/friendicon1"
+                    app:layout_constraintTop_toBottomOf="@id/friendstag"
+                    app:layout_constraintVertical_bias="1" />
+
+                <com.example.paynavtask.ui.MyImageView
+                    android:id="@+id/friendicon3"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/imagebackground"
+                    android:clipToOutline="true"
+                    android:outlineProvider="background"
+                    android:src="@drawable/p2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/friendicon2"
+                    app:layout_constraintTop_toBottomOf="@id/friendstag"
+                    app:layout_constraintVertical_bias="1" />
+
+                <com.example.paynavtask.ui.MyImageView
+                    android:id="@+id/friendicon4"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/imagebackground"
+                    android:clipToOutline="true"
+                    android:outlineProvider="background"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/p4"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/friendicon3"
+                    app:layout_constraintTop_toBottomOf="@id/friendstag"
+                    app:layout_constraintVertical_bias="1" />
+
+                <ImageView
+                    android:id="@+id/expand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="40dp"
+                    android:contentDescription="expand list"
+                    android:minWidth="28dp"
+                    android:minHeight="28dp"
+                    android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/friendicon4"
+                    tools:ignore="TouchTargetSizeCheck" />
+                <ImageView
+                    android:id="@+id/collapes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:contentDescription="expand list"
+                    android:minWidth="28dp"
+                    android:minHeight="28dp"
+                    android:src="@drawable/ic_baseline_keyboard_arrow_up_24"
+                    app:layout_constraintBottom_toTopOf="@id/expandedfriendlist"
+                   app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="10dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/expandedfriendlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/friendicon1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/friendstag"
+                    tools:listitem="@layout/nestedfriendlayout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.motion.widget.MotionLayout>
